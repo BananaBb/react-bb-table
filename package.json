@@ -1,11 +1,19 @@
 {
   "name": "react-bb-table",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This is a modulable component to render data in a table with some nice features !",
   "author": "BananaBb",
   "license": "MIT",
+  "keywords": [
+    "react",
+    "react-table",
+    "data-table",
+    "datatable",
+    "table"
+  ],
   "repository": "BananaBb/react-bb-table",
   "main": "dist/index.js",
+  "style": "dist/styles.css",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
   "engines": {

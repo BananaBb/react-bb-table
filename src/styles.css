@@ -1,8 +1,53 @@
-/* add css styles here (optional) */
+.bb-table {
+  font-size: 12px;
+  letter-spacing: -0.23px;
+  line-height: 19px;
+  overflow-y: auto;
+}
 
-.test {
-  display: inline-block;
-  margin: 2em auto;
-  border: 2px solid #000;
-  font-size: 2em;
+.bb-table .bb-table-header, .bb-table .bb-table-row-group .bb-table-row {
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-content: flex-start;
+}
+
+
+.bb-table .bb-table-row-cell {
+  display: block;
+  flex: 1;
+  overflow: hidden;
+  word-wrap: break-word
+}
+.bb-table .bb-table-header .bb-table-row-cell {
+  font-weight: bold;
+  color: #A4A4A4;
+  padding: 5px 8px;
+}
+.bb-table .bb-table-header .bb-table-row-cell:first-child {padding-left: 9px;}
+.bb-table .bb-table-header .bb-table-row-cell:last-child {padding-right: 9px;}
+
+.bb-table .bb-table-row-group {width: 100%;}
+.bb-table .bb-table-row-group .bb-table-row .bb-table-row-cell {
+  color: #3C3C3B;
+  vertical-align: middle;
+  padding: 10px 8px;
+  border-width: 1px 0 1px;
+  border-style: solid;
+  border-color: #EFEDED;
+}
+.bb-table .bb-table-row-group .bb-table-row .bb-table-row-cell:first-child {border-width: 1px 0 1px 1px;}
+.bb-table .bb-table-row-group .bb-table-row .bb-table-row-cell:last-child {border-width: 1px 1px 1px 0;}
+.bb-table .bb-table-row-group .bb-table-row .bb-table-row-cell div {padding: 5px 0;}
+.bb-table .bb-table-row-group .bb-table-row .bb-table-row-cell div p {margin: 0;}
+
+.bb-table-no-record {
+  text-align: center;
+  padding: 10px 8px;
+}
+
+.bb-table-row-cell-btn {
+  margin-right: 15px;
 }
