@@ -32,6 +32,7 @@ export default class ReactBbTable extends Component {
     if (cols.length <= 0) {
       return (<div />)
     }
+    this.settings = []
     return (
       <div className="bb-table-header">
         {cols.map((col) => {
