@@ -12,16 +12,17 @@ export default class ReactBbTable extends Component {
   }
 
   replaceRowID(id) {
-    let items = <div dangerouslySetInnerHTML={{__html: this.rowLinks.replace(/%id%/g, id)}} />
-    return (items)
+    return (<div dangerouslySetInnerHTML={{__html: this.rowLinks.replace(/%id%/g, id)}} />)
   }
 
   tableRowLink(unique) {
-    for (let key in unique) {
-      this.rowLinks+= `<a href="%path%%id%" class="bb-table-row-cell-btn" key="link-%key%-%id%">%item%</a>`
-        .replace("%path%", unique[key].path)
-        .replace("%key%", key)
-        .replace("%item%", unique[key].item)
+    if (this.rowLinks === "") {
+      for (let key in unique) {
+        this.rowLinks+= `<a href="%path%%id%" class="bb-table-row-cell-btn" key="link-%key%-%id%">%item%</a>`
+          .replace("%path%", unique[key].path)
+          .replace("%key%", key)
+          .replace("%item%", unique[key].item)
+      }
     }
     return ""
   }
