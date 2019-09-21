@@ -6,16 +6,14 @@ import styles from './styles.css'
 export default class ReactBbTable extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      options: this.props.options,
-      recordID: 0
-    };
+    this.state = {};
     this.settings = [];
     this.rowLinks = "";
   }
 
   replaceRowID(id) {
-    return (<div dangerouslySetInnerHTML={{__html: this.rowLinks.replace(/%id%/g, id)}} />)
+    let items = <div dangerouslySetInnerHTML={{__html: this.rowLinks.replace(/%id%/g, id)}} />
+    return (items)
   }
 
   tableRowLink(unique) {
@@ -52,6 +50,7 @@ export default class ReactBbTable extends Component {
   }
 
   tableRow(rows) {
+    
     if (rows.length <= 0 || this.settings.length <= 0) {
       return (<div className="bb-table-no-record">No Records</div>)
     }
@@ -75,13 +74,13 @@ export default class ReactBbTable extends Component {
   }
 
   render() {
-    if (!this.state.options.data) {
+    if (!this.props.options.data) {
       return (<div />)
     }
     return (
-      <div className="bb-table" style={(this.state.options.dimensions.width) ? {width: this.state.options.dimensions.width} : {}}>
-        {this.tableHeader(this.state.options.data.columns)}
-        {this.tableRow(this.state.options.data.rows)}
+      <div className="bb-table" style={(this.props.options.dimensions.width) ? {width: this.props.options.dimensions.width} : {}}>
+        {this.tableHeader(this.props.options.data.columns)}
+        {this.tableRow(this.props.options.data.rows)}
       </div>
     )
   }
